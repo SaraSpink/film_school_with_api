@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   before_action :authorize, only: [:index]
-  before_action :authorize_admin, only: [:new]
+  before_action :authorize_admin, only: [:new, :edit]
   def index
     @location = Location.all
 
