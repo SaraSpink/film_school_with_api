@@ -1,5 +1,12 @@
 <h1>Create a New Location Brah!</h1>
 <%= form_for @location do |f| %>
+<div class="form-group">
+    <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+    <div class="col-sm-6">
+        <%= f.file_field :avatar %>
+    </div>
+</div>
+<br><br>
 <div class="field">
   <%= f.label :name %><br />
   <%= f.text_field :name %>

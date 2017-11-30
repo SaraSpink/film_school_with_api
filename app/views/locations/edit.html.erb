@@ -1,0 +1,17 @@
+<h1>Edit <%= @location.name %></h1>
+<%= form_for @location do |f| %>
+<div class="field">
+  <div class="form-group">
+      <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+      <div class="col-sm-6">
+          <%= f.file_field :avatar %>
+      </div>
+  </div>
+  <br><br>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</div>
+<div class="actions">
+  <%= f.submit "Update" %>
+</div>
+<% end %>
