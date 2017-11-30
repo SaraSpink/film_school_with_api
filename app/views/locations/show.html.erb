@@ -1,1 +1,7 @@
-<p>8</p>
+<%= image_tag(@location.avatar.url(:original)) %>
+<h1> Welcome to the <%=@location.name%></h1>
+
+<br>
+<br>
+
+  <button class="btn btn-info"><%= link_to "Go Back to Locations", locations_path %></button>

@@ -1,7 +1,20 @@
 <h1>Oh, The Places You'll Go!</h1>
-<ul>
+
+
+<ul style="list-style-type:none">
   <h2>Available Places:</h2>
-  <li>a place</li>
-  <li>another place</li>
-  <li>go back to bed</li>
-</ul>
+   <% @location.each do |location| %>
+   <li>
+     <div class="well">
+       <b><%= location.name %></b>
+       <br>
+       <%= image_tag(location.avatar.url(:thumb)) %>
+       <br>
+       <%= link_to "Check it out", location_path(location) %>
+     </div>
+   </li>
+   <% end %>
+ </ul>
+
+
+   <button class="btn btn-info"><%= link_to "Create a new Location", new_location_path %></button>
