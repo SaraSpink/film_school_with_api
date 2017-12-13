@@ -13,9 +13,17 @@ class Api::LocationsController < ApplicationController
   def create
     location = Location.new(location_params)
     if location.save
-      head 200
+      render json: {
+        status: 200,
+        mesage: "Successfully created location!",
+        location: location
+      }.to_json
     else
-      head 500
+      render json: {
+        status: 500,
+        errors: location.errors,
+        mesage: "You done fucked up."
+      }.to_json
     end
   end
 
