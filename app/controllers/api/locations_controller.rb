@@ -1,6 +1,5 @@
-class Api::LocationsController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
+class Api::LocationsController < Api::ApiController
+                    
   def index
     render json: Location.all
   end
